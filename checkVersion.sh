@@ -49,7 +49,7 @@ vercomp () {
 
 KERNEL_VER=`uname -r | sed 's/-.*//'`
 
-if [ "$(checkver ${KERNEL_VER} '3.10' '>')" -eq 0 ]
+if [ "$(checkver ${KERNEL_VER} '3.10' '>')" -eq 0 -o "$(checkver ${KERNEL_VER} '3.10' '=')" -eq 0 ]
 then
     echo "current Kernel version ${KERNEL_VER} > 3.10  --- ok"
 else
